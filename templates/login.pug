@@ -1,0 +1,26 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Login
+  link(rel='styleSheet' href='/css/myStyle.css')
+nav.navigate
+  a.navigate(href='myAboutMe') About Me
+  a.navigate(href='contactMe') Contact Me
+  a.navigate(href='myContacts') Contacts
+  a.navigate(href='myWidgets') Widgets
+  a.navigate(href='login') Login
+section
+  header
+    h1.name Log In?
+  .login
+    form
+      label(for='username') Username:
+      br
+      input#username(type='text' name='username')
+      br
+      label(for='password') Password:
+      br
+      input#password(type='password' name='password')
+      br
+      br
+      input(type='submit' value='Submit')

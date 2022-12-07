@@ -1,0 +1,74 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Social Media Widgets
+  link(rel='styleSheet' href='/css/myStyle.css')
+  link(rel='stylesheet' href='/css/passwordWidget.css')
+  script(async='' defer='' src='/js/passwordWidget.js')
+  script(async='' defer='' src='/js/timeWidget.js')
+  script(async='' defer='' src='/js/weatherWidget.js')
+nav.navigate
+  a.navigate(href='myAboutMe') About Me
+  a.navigate(href='contactMe') Contact Me
+  a.navigate(href='myContacts') Contacts
+  a.navigate(href='myWidgets') Widgets
+  a.navigate(href='login') Login
+div
+  header
+    h1 My Widgets
+section.flex
+  .flex
+    | Welcome week of UMN class of 2025 on Youtube
+    br
+    // This is the copied Youtube embed HTML
+    iframe(width='560' height='315' src='https://www.youtube.com/embed/Sm8FIcFddck' title='YouTube video player' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+  .flex
+    // This is the copied Twitter embed HTML
+    | Most Recent Tweets by the University of Minnesota - Twin Cities
+    blockquote.twitter-tweet
+      p(lang='en' dir='ltr')
+        | Across business and public health, from law, agriculture, public life, and much more &ndash; the University of Minnesota Twin Cities is building a better world. 
+        a(href='https://twitter.com/hashtag/UMNproud?src=hash&ref_src=twsrc%5Etfw') #UMNproud
+        a(href='https://t.co/xHwJ1LKhKG') https://t.co/xHwJ1LKhKG
+        a(href='https://t.co/TVoZjUPxlt') pic.twitter.com/TVoZjUPxlt
+      |                     &mdash; University of Minnesota (@UMNews) 
+      a(href='https://twitter.com/UMNews/status/1570065487907721217?ref_src=twsrc%5Etfw') September 14, 2022
+    script(async='' src='https://platform.twitter.com/widgets.js')
+section.flex
+  .container
+    .header
+      h2 Password Strength Checking with JS
+      hr
+    #passwordContent.content
+      form#register(name='register')
+        label(for='password') Password :
+        input#password(name='password' type='password' placeholder='Type Your Password here')
+        span#pwdresult
+  .container
+    .header
+      h2 Time Until the Semester is Over
+      hr
+    #timerContent.content
+section.flex
+  .container
+    .header
+      h2 Weather
+      hr
+    #weatherContent
+      p#weatherStatus
+      form
+        div
+          span Coordinates:
+          input#latitude-input(type='text' placeholder='Latitude')
+          input#longitude-input(type='text' placeholder='Longitude')
+        div
+          button#find-me(type='button') Auto-Find me!
+          button#get-weather-btn(type='button') Find The Weather!
+      #weatherOutput
+        p#temp-display
+        p#cloud-cover-display
+        p#sunrise-display
+        p#sunset-display
+      // Interesting fact. We're legally required to put this here.
+      a(href='https://open-meteo.com/') Weather data by Open-Meteo.com
+      a(href='https://sunrise-sunset.org/') Sunrise and sunset data by sunrise-sunset.org
