@@ -1,0 +1,19 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Login
+  link(rel='styleSheet' href='/css/myStyle.css')
+  script(async='' defer='' src='/js/auth.js')
+nav.navigate
+  a.navigate(href='myAboutMe') About Me
+  a.navigate(href='contactMe') Contact Me
+  a.navigate(href='myContacts') Contacts
+  a.navigate(href='myWidgets') Widgets
+  a.navigate(href='logout') #{name}
+section
+  header
+    h1.name Hi #{name}
+  .login
+    button#logout Logout
+    //- form(action='http://localhost:3005/logout' method='POST')
+    //- input#login(type='submit' value='Logout')

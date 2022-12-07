@@ -176,3 +176,7 @@ div fieldset{
     background-color: #9AAFA4;
     height: auto;
 }
+
+#logout {
+    margin-left:45%;
+}

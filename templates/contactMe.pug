@@ -9,7 +9,10 @@ nav.navigate
   a.navigate(href='contactMe') Contact Me
   a.navigate(href='myContacts') Contacts
   a.navigate(href='myWidgets') Widgets
-  a.navigate(href='login') Login
+  if login
+    a.navigate(href='logout') #{name}
+  else
+    a.navigate(href='login') Login
 .contactform
   header
     h1 Contact Me
