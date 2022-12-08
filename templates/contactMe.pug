@@ -14,12 +14,13 @@ nav.navigate
   else
     a.navigate(href='login') Login
 
-if 
+if isSubmitted
+  p.submitted Your Message Has Been Successfully Received!
 .contactform
   header
     h1 Contact Me
   p.required Required fields are marked with
-  form(action='/api/addContact' method='POST')
+  form(action='/addContact' method='POST')
     label.required(for='postTitle') Title:
     br
     input#postTitle(type='text' name='postTitle' required='')

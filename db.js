@@ -1,7 +1,7 @@
 var mysql = require("mysql");
 
 // create connection pool
-var con = mysql.createPool({
+var connPool = mysql.createPool({
     host: "cse-mysql-classes-01.cse.umn.edu",
     user: "C4131F22U63",
     database: "C4131F22U63",
@@ -41,3 +41,4 @@ function addContact(contact) {
       })
     })
 }
+exports.addContact=addContact

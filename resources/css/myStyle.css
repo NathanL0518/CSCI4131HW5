@@ -180,3 +180,11 @@ div fieldset{
 #logout {
     margin-left:45%;
 }
+
+.submitted {
+    display: inline-block;
+    text-align: center;
+    border: 2px solid red;
+    margin-left: 45vw;
+    margin-right: 45vw;
+}
