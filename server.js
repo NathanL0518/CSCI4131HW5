@@ -50,9 +50,16 @@ app.get("/myContacts", function (req, res) {
 
 app.get("/myWidgets", function (req, res) {
   if (session.login) {
-    res.render("myWidgets.pug", { isLogin: session.login, name: session.user, count: session.counter })
+    res.render("myWidgets.pug", {
+      isLogin: session.login,
+      name: session.user,
+      count: session.counter,
+    })
   } else {
-    res.render("myWidgets.pug", { isLogin: session.login, count: session.counter })
+    res.render("myWidgets.pug", {
+      isLogin: session.login,
+      count: session.counter,
+    })
   }
 })
 
@@ -81,25 +88,23 @@ app.post("/logout", function (req, res) {
 })
 
 app.get("/api/click", async function (req, res) {
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({ clickCount: counter }));
+  res.setHeader("Content-Type", "application/json")
+  res.end(JSON.stringify({ clickCount: counter }))
 })
 
 app.post("/api/click", async function (req, res) {
-  counter++;
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify({ clickCount: counter }));
+  counter++
+  res.setHeader("Content-Type", "application/json")
+  res.end(JSON.stringify({ clickCount: counter }))
 })
 
-app.get('api/getContact', async function (req, res) {
-  
-})
+app.get("api/getContact", async function (req, res) {})
 
-app.post('/api/addContact', async function (req, res){
-  const title =  req.body.postTitle
+app.post("/api/addContact", async function (req, res) {
+  const title = req.body.postTitle
   const email = req.body.email
   const username = req.body.username
-  const link = req.body.link == undefined ? '' : req.body.link
+  const link = req.body.link == undefined ? "" : req.body.link
   const category = req.body.category
   const msg = req.body.message
   console.log(title)
@@ -108,8 +113,8 @@ app.post('/api/addContact', async function (req, res){
   console.log(link)
   console.log(category)
   console.log(msg)
-  // await db.addContact({title, email, username, link, category, msg})
-  // res.render('/contactMe', {isSubmitted: true})
+  await db.addContact({ title, email, username, link, category, msg })
+  res.render("/contactMe", { isSubmitted: true })
 })
 
 // Start the server
