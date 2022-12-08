@@ -9,7 +9,7 @@ nav.navigate
   a.navigate(href='contactMe') Contact Me
   a.navigate(href='myContacts') Contacts
   a.navigate(href='myWidgets') Widgets
-  if login
+  if isLogin
     a.navigate(href='logout') #{name}
   else
     a.navigate(href='login') Login
@@ -17,7 +17,7 @@ nav.navigate
   header
     h1 Contact Me
   p.required Required fields are marked with
-  form(action='https://www-users.cselabs.umn.edu/~joh13266/contactMe.php' method='POST')
+  form(action='/api/addContact' method='POST')
     label.required(for='postTitle') Title:
     br
     input#postTitle(type='text' name='postTitle' required='')

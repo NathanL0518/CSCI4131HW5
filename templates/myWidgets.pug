@@ -4,15 +4,17 @@ head
   title Social Media Widgets
   link(rel='styleSheet' href='/css/myStyle.css')
   link(rel='stylesheet' href='/css/passwordWidget.css')
+  link(rel='stylesheet' href='/css/clickWidget.css')
   script(async='' defer='' src='/js/passwordWidget.js')
   script(async='' defer='' src='/js/timeWidget.js')
   script(async='' defer='' src='/js/weatherWidget.js')
+  script(async='' defer='' src='/js/clickWidget.js')
 nav.navigate
   a.navigate(href='myAboutMe') About Me
   a.navigate(href='contactMe') Contact Me
   a.navigate(href='myContacts') Contacts
   a.navigate(href='myWidgets') Widgets
-  if login
+  if isLogin
     a.navigate(href='logout') #{name}
   else
     a.navigate(href='login') Login
@@ -75,3 +77,9 @@ section.flex
       // Interesting fact. We're legally required to put this here.
       a(href='https://open-meteo.com/') Weather data by Open-Meteo.com
       a(href='https://sunrise-sunset.org/') Sunrise and sunset data by sunrise-sunset.org
+  .container
+    .header
+      h2 Counter
+      hr
+    div
+      button#counter(type='button') #{count}
