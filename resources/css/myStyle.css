@@ -188,3 +188,7 @@ div fieldset{
     margin-left: 45vw;
     margin-right: 45vw;
 }
+
+.filter {
+    text-align: center;
+}

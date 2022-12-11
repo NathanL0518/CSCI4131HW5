@@ -10,35 +10,46 @@ var connPool = mysql.createPool({
 });
 
 // function to get the contacts
-function getContact(filter, value) {
-    return new Promise((resolve, reject)=>{
-      const sql = "select * from user where username=?"
-      connPool.query(sql, [username], (err, rows)=>{
-        if (err) {
-          reject(err);
-        } else if (rows.length>0) {
-          resolve(rows[0]);
-        } else {
-          resolve(undefined)
-        }
-      })
+function getContact(filter) {
+  if(filter == 'all'){
+    sql = "select * from contacts"
+  }
+  else{
+    sql= `select * from contacts where category = '${filter}'`
+  }
+  return new Promise((resolve, reject)=>{
+    console.log("sql: " + sql)
+    connPool.query(sql, (err, rows)=>{
+      if (err) {
+        console.log("fail to fetch to the database")
+        reject(err);
+      } else if (rows.length>0) {
+        console.log("successfully fetched from the database")
+        resolve(rows);
+      } else {
+        console.log("databse empty")
+        resolve(undefined)
+      }
     })
+  })
 }
 
 // function to add to the contact log
 function addContact(contact) {
     return new Promise((resolve, reject)=>{
-      console.log("added to the database")
       const sql = "insert into contacts (email, title, username, link, category, msg) values (?,?,?,?,?,?)"
       let { email, title, username, link, category, msg } = contact
       link = contact.link == '' ? null : link
       connPool.query(sql, [email, title, username, link, category, msg], (err, rows)=>{
         if (err) {
+          console.log("fail to add to the database")
           reject(err);
         } else {
+          console.log("added to the database")
           resolve(rows);
         }
       })
     })
 }
 exports.addContact=addContact
+exports.getContact=getContact

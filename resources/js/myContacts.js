@@ -7,65 +7,65 @@ window.addEventListener("load", function(){
 
     sheperd.addEventListener("mouseenter", function(){
         let image = document.getElementById("picture");
-        image.src = "resources/images/shepherd.jpg";
+        image.src = "/images/shepherd.jpg";
         let img = document.getElementById("sheperd");
         img.style.display="block";
     })
     sheperd.addEventListener("mouseleave", function(){
         let image = document.getElementById("picture");
-        image.src = "resources/images/gopher.jpg";
+        image.src = "/images/gopher.jpg";
         let img = document.getElementById("sheperd");
         img.style.display="none";
     })
 
     keller1.addEventListener("mouseenter", function(){
         let image = document.getElementById("picture");
-        image.src = "resources/images/keller.jpg";
+        image.src = "/images/keller.jpg";
         let img = document.getElementById("keller1");
         img.style.display="block";
     })
     keller1.addEventListener("mouseleave", function(){
         let image = document.getElementById("picture");
-        image.src = "resources/images/gopher.jpg";
+        image.src = "/images/gopher.jpg";
         let img = document.getElementById("keller1");
         img.style.display="none";
     })
 
     keller2.addEventListener("mouseenter", function(){
         let image = document.getElementById("picture");
-        image.src = "resources/images/keller.jpg";
+        image.src = "/images/keller.jpg";
         let img = document.getElementById("keller2");
         img.style.display="block";
     })
     keller2.addEventListener("mouseleave", function(){
         let image = document.getElementById("picture");
-        image.src = "resources/images/gopher.jpg";
+        image.src = "/images/gopher.jpg";
         let img = document.getElementById("keller2");
         img.style.display="none";
     })
 
     apartment.addEventListener("mouseenter", function(){
         let image = document.getElementById("picture");
-        image.src = "resources/images/apartment.jpg";
+        image.src = "/images/apartment.jpg";
         let img = document.getElementById("apartment");
         img.style.display="block";
     })
     apartment.addEventListener("mouseleave", function(){
         let image = document.getElementById("picture");
-        image.src = "resources/images/gopher.jpg";
+        image.src = "/images/gopher.jpg";
         let img = document.getElementById("apartment");
         img.style.display="none";
     })
 
     bruiniks.addEventListener("mouseenter", function(){
         let image = document.getElementById("picture");
-        image.src = "resources/images/bruiniks.jpg";
+        image.src = "/images/bruiniks.jpg";
         let img = document.getElementById("bruiniks");
         img.style.display="block";
     })
     bruiniks.addEventListener("mouseleave", function(){
         let image = document.getElementById("picture");
-        image.src = "resources/images/gopher.jpg";
+        image.src = "/images/gopher.jpg";
         let img = document.getElementById("bruiniks");
         img.style.display="none";
     })

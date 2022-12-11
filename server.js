@@ -3,7 +3,7 @@ const session = require("express-session")
 
 // setup server
 const app = express()
-const port = 3306
+const port = 3006
 var db = require("./db")
 
 app.use(express.static("resources"))
@@ -68,6 +68,24 @@ app.get("/logout", function (req, res) {
   res.render("login.pug", { isLogin: true, name: session.user })
 })
 
+app.get("/contactLog", async function (req, res) {
+  if(req.query.filter == undefined){
+    req.query.filter = 'all'
+  }
+  var contacts = await db.getContact(req.query.filter)
+  var isEmpty = false;
+  if(contacts == undefined){
+    isEmpty = true;
+  }
+  if (session.login) {
+    console.log(contacts.length)
+    res.render("contactLog.pug", { isLogin: session.login, name: session.user, isEmpty: isEmpty, contacts: contacts })
+  } else {
+    console.log(contacts.length)
+    res.render("contactLog.pug", { isLogin: session.login, isEmpty: isEmpty, contacts: contacts, length: contacts.length})
+  }
+})
+
 app.post("/login", function (req, res) {
   session.login = true
   session.user = req.body.username
@@ -89,10 +107,6 @@ app.post("/api/click", async function (req, res) {
   counter++;
   res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify({ clickCount: counter }));
-})
-
-app.get('/getContact', async function (req, res) {
-  
 })
 
 app.post('/addContact', async function (req, res){
