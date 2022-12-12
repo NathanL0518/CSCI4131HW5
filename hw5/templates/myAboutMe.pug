@@ -1,0 +1,57 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title About Me Page
+  link(rel='styleSheet' href='/css/myStyle.css')
+nav.navigate
+  a.navigate(href='myAboutMe') About Me
+  a.navigate(href='contactMe') Contact Me
+  a.navigate(href='myContacts') Contacts
+  a.navigate(href='myWidgets') Widgets
+  a.navigate(href='contactLog') Contact Log
+  if isLogin
+    a.navigate(href='logout') #{name}
+  else
+    a.navigate(href='login') Login
+section
+  header
+    h1.name Nathan Liang
+  img#cat(src='/images/cat.jpg' alt='Picture of my cats')
+  .content
+    .box
+      header
+        h2 About me
+      br
+      div
+        p
+          | I am 
+          strong Nathan Liang
+          | . I am a current undergraduate student at the University of Minnesota
+          br
+          |                         pursing in Bachelor of Science degree in Computer Science.
+        p
+          | I do not have much experience in web development. This is my first time doing web programming.
+          br
+          |                         Therefore, I am very excited to learn some basics about front end languages.
+        p
+          | The picture above are my cats. The white one is called 
+          em Diandian
+          | , pronounces as &quot;din din&quot;. The gold
+          br
+          |                         one is called 
+          em Yuanyuan
+          | , it pronounces somewhere along the line of &quot;yen yen&quot;.
+    .box
+      header
+        h2 Schedule
+      br
+      div
+        ul
+          li
+            | CSCI 4131
+          li
+            | CSCI 4707
+          li
+            | CSCI 5801
+          li
+            | CSCI 5115
