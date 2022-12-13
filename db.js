@@ -13,10 +13,10 @@ var connPool = mysql.createPool({
 function getContact(filter) {
   console.log(filter)
   if(filter == 'all' || filter == 'ALL'){
-    sql = "select * from contacts"
+    sql = "SELECT * FROM contacts"
   }
   else{
-    sql= `select * from contacts where category = '${filter}'`
+    sql= `SELECT * FROM contacts WHERE category = '${filter}'`
   }
   return new Promise((resolve, reject)=>{
     console.log("sql: " + sql)
@@ -52,5 +52,6 @@ function addContact(contact) {
       })
     })
 }
+
 exports.addContact=addContact
 exports.getContact=getContact

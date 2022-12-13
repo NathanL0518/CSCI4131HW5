@@ -3,7 +3,7 @@ const session = require("express-session")
 
 // setup server
 const app = express()
-const port = 3006
+const port = 3007
 var db = require("./db")
 
 app.use(express.static("resources"))
@@ -50,9 +50,9 @@ app.get("/myContacts", function (req, res) {
 
 app.get("/myWidgets", function (req, res) {
   if (session.login) {
-    res.render("myWidgets.pug", { isLogin: session.login, name: session.user, count: session.counter })
+    res.render("myWidgets.pug", { isLogin: session.login, name: session.user })
   } else {
-    res.render("myWidgets.pug", { isLogin: session.login, count: session.counter })
+    res.render("myWidgets.pug", { isLogin: session.login })
   }
 })
 
